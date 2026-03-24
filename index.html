@@ -41,6 +41,9 @@
         <input type="submit" value="Place Order">
     </form>
 
+    <!-- Placeholder for receipt output -->
+    <div id="receipt"></div>
+
     <script>
         // Function to calculate subtotal based on food choice and quantity
         function calculateSubtotal(order, quantity){
@@ -95,7 +98,7 @@
                     foodName = "Item not found";
             }
 
-            // Display receipt details on the page
+            // Display receipt details inside the receipt div
             document.getElementById("receipt").innerHTML =
                 "<h2>ORDER SUMMARY</h2>" +
                 "<p>Name: " + name + "</p>" +
@@ -104,7 +107,7 @@
                 "<p>Quantity: " + quantity + "</p>" +
                 "<p>Subtotal: PHP " + subtotal + "</p>" +
                 "<p>Discount: PHP " + discount + "</p>" +
-                "<p>Total: PHP " + total + "</p>" +
+                "<p><strong>Total: PHP " + total + "</strong></p>" +
                 "<p>Thank you for your patronage!</p>";
 
             // Prevents page reload after form submission
